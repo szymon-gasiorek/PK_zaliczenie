@@ -1,0 +1,24 @@
+﻿@model int
+
+@{ 
+    ViewBag.Title = "404 Error";
+
+}
+
+<div class="alert alert-danger mt-1 mb-1" >
+    <h4>404 Not Found Error</h4>
+    <hr />
+    <h5>
+        Unit with Id = @Model not found
+    </h5>
+
+</div>
+
+<div>
+    <img src="~/images/65.jpg" imageThumbnail />
+</div>
+
+<a asp-action="list" asp-controller="home" class="btn btn-outline-success" style="width:auto">
+    Click here to see all Units
+</a>
+

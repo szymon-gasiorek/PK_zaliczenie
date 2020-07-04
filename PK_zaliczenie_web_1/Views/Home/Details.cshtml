@@ -1,0 +1,48 @@
+﻿@model HomeDetailsViewModel
+
+@{
+    ViewBag.Title = "Units Details";
+    var photoPath = "~/images/" + (Model.unit.PhotoPath ?? "defense.png");
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.unit.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="@photoPath"
+                      asp-append-version="true"/>
+
+                <h4>Unit ID : @Model.unit.Id</h4>
+                <h4>Name : @Model.unit.Name</h4>
+                <h4>Attack : @Model.unit.Attack</h4>
+                <h4>Defense : @Model.unit.Defense</h4>
+                <h4>Min Damage : @Model.unit.min_Damage</h4>
+                <h4>Max Damage : @Model.unit.max_Damage</h4>
+                <h4>Health : @Model.unit.Health</h4>
+                <h4>Faction : @Model.unit.Faction</h4>
+
+            </div>
+            <div class="card-footer text-center">
+
+                <a href="@Url.Action("list", "home")"
+                   class="btn btn-primary m-1">Back</a>
+
+                <a asp-action="edit" asp-controller="home"
+                   asp-route-id="@Model.unit.Id"
+                   class="btn btn-primary m-1">Edit</a>
+
+                <a asp-action="delete" asp-controller="home"
+                   asp-route-id="@Model.unit.Id"
+                   class="btn btn-danger m-1">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}

@@ -1,0 +1,22 @@
+﻿<div class="alert alert-danger mt-1 mb-1">
+    <h4>Error occured while processing your request</h4>
+    <hr />
+    <h5>Exception Path</h5>
+    <p>@ViewBag.ExceptionPath</p>
+    <hr />
+
+    <h5>Exception Message</h5>
+    <p> @ViewBag.ExceptionMessage</p>
+    <hr />
+
+    <h5>Stack Trace</h5>
+    <p> @ViewBag.StackTrace</p>
+</div>
+
+<div>
+    <img src="~/images/12.jpg" imageThumbnail />
+</div>
+
+<a asp-action="index" asp-controller="home" class="btn btn-outline-success" style="width:auto">
+    Click here to return to the home page
+</a>

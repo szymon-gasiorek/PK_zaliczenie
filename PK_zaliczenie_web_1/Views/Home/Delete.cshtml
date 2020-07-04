@@ -1,0 +1,44 @@
+﻿@model DeleteViewModel
+
+@{
+    ViewBag.Title = "Units Details";
+    var photoPath = "~/images/" + (Model.unit.PhotoPath ?? "defense.png");
+}
+
+<form enctype="multipart/form-data" asp-controller="home" asp-action="delete" method="post">
+    <div class="row justify-content-center m-3">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Are you sure you want to delete @Model.unit.Name ?</h1>
+                </div>
+
+                <div class="card-body text-center">
+                    <img class="card-img-top" src="@photoPath"
+                         asp-append-version="true" />
+
+                    <h4>Unit ID : @Model.unit.Id</h4>
+                    <h4>Name : @Model.unit.Name</h4>
+                    <h4>Attack : @Model.unit.Attack</h4>
+                    <h4>Defense : @Model.unit.Defense</h4>
+                    <h4>Min Damage : @Model.unit.min_Damage</h4>
+                    <h4>Max Damage : @Model.unit.max_Damage</h4>
+                    <h4>Health : @Model.unit.Health</h4>
+                    <h4>Faction : @Model.unit.Faction</h4>
+
+                </div>
+                <div class="card-footer text-center">
+
+                    <a href="@Url.Action("list", "home")"
+                       class="btn btn-primary m-1">Back</a>
+
+                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}
